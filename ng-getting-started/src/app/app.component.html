@@ -1,8 +1,16 @@
 <!--The whole content below can be removed with the new code.-->
-<div style="text-align:left">
-  <h1>
-    {{title}}
-  </h1>
-  <!-- ... My First Componet ... -->
-  <pm-products></pm-products>
+<div>
+  <nav class='navbar navbar-default'>
+    <a class='navbar-brand'>{{ title }}</a>
+    <ul class='nav navbar-nav'>
+      <li><a [routerLink]="['/welcome']">Home</a></li>
+      <li><a [routerLink]="['/products']">Product List</a></li>
+    </ul>
+  </nav>
+  <div class='container-fluid'>
+    <div class='container'>      
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  
 </div>
