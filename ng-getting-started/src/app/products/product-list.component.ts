@@ -12,6 +12,7 @@ export class ProductListComponent {
     imageWidth: number = 50;
     imagemargin: number = 2;
     showImage: boolean = false;
+    errorMessage: string;
     // listFilter: string = 'cart';
     
     _listFilter: string;
@@ -45,7 +46,12 @@ export class ProductListComponent {
     
     ngOnInit(): void {
         // console.log('In OnInit');
-        this.products = this._productService.getProducts();
-        this.filteredProducts = this.products;
+        this._productService.getProducts()
+                .subscribe(products => {
+                    this.products = products;
+                    this.filteredProducts = this.products;
+                },
+                    error => this.errorMessage = <any>error);
+        
     }
 }
