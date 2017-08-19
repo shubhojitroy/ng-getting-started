@@ -12,6 +12,7 @@ import { ProductDetailComponent } from './products/product-detail.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { ProductGuardService } from './products/product-guard.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
